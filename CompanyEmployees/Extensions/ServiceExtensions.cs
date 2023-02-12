@@ -1,9 +1,9 @@
 ﻿using Contracts;
 using LoggerService;
-using Repository;
-using Service.Contracts;
-using Service;
 using Microsoft.EntityFrameworkCore;
+using Repository;
+using Service;
+using Service.Contracts;
 
 namespace CompanyEmployees.Extensions
 {
@@ -38,6 +38,7 @@ namespace CompanyEmployees.Extensions
             services.AddScoped<IServiceManager, ServiceManager>();
 
         // AddSqlServer shortcut method, but less features
+        // Registering contex at a Runtime
         public static void ConfigureSqlContext(this IServiceCollection services,
             IConfiguration configuration) =>
                 services.AddDbContext<RepositoryContext>(opts =>
