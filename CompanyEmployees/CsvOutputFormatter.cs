@@ -1,9 +1,7 @@
-﻿using Azure;
+﻿using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Net.Http.Headers;
 using Shared.DataTransferObjects;
 using System.Text;
-using System;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using Microsoft.Net.Http.Headers;
 
 namespace CompanyEmployees
 {
@@ -43,11 +41,11 @@ namespace CompanyEmployees
             }
             await response.WriteAsync(buffer.ToString());
         }
-        
+
         private static void FormatCsv(StringBuilder buffer, CompanyDto company)
         {
             buffer.AppendLine($"{company.Id},\"{company.Name},\"{company.FullAddress}\"");
         }
     }
-    
+
 }
