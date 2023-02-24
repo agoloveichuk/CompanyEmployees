@@ -59,12 +59,15 @@ namespace CompanyEmployees.Extensions
                 if (systemTextJsonOutputFormatter != null)
                 {
                     systemTextJsonOutputFormatter.SupportedMediaTypes.Add("application/vnd.cd.hateoas+json");
+                    systemTextJsonOutputFormatter.SupportedMediaTypes.Add("application/vnd.cd.apiroot+json");
+
                 }
                 var xmlOutputFormatter = config.OutputFormatters.OfType<XmlDataContractSerializerOutputFormatter>()?
                     .FirstOrDefault();
                 if (xmlOutputFormatter != null)
                 {
                     xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.cd.hateoas+xml");
+                    xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.cd.apiroot+xml");
                 }
             });
         }
