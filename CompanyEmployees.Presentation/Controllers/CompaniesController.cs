@@ -7,6 +7,7 @@ using Shared.DataTransferObjects;
 namespace CompanyEmployees.Presentation.Controllers
 {
     [Route("api/companies")]
+    //[ResponseCache(CacheProfileName = "120SecondsDuration")]
     [ApiController]
     public class CompaniesController : ControllerBase
     {
